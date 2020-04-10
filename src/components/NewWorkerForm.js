@@ -10,7 +10,7 @@ class NewWorkerForm extends React.Component {
 
   render() {
 
-    
+    const { workerFirstName, workerLastName, workerAddress, workerIdNumber, workerBirthDate, handleSubmit, handleChange } = this.props;
 
     return (
       <div className="NewWorkerForm">
@@ -23,34 +23,60 @@ class NewWorkerForm extends React.Component {
             </Card.Header>
             <Accordion.Collapse eventKey="1">
               <Card.Body className="Card">
-                <Form className="Form">
+                <Form className="Form" onSubmit={handleSubmit}>
                   <Form.Row className="Names">
+
                     <Form.Group controlId="formGridFirstName">
                       <Form.Label>שם פרטי</Form.Label>
-                      <Form.Control className="PlaceHolder" placeholder="שם עובד" />
+                      <Form.Control
+                        value1={workerFirstName}
+                        onChange={handleChange}
+                        className="PlaceHolder"
+                        placeholder="שם עובד"
+                      />
                     </Form.Group>
 
                     <Form.Group controlId="formGridLastName">
                       <Form.Label>שם משפחה</Form.Label>
-                      <Form.Control className="PlaceHolder" placeholder="משפחה" />
+                      <Form.Control
+                        value2={workerFirstName}
+                        onChange={this.handleChange}
+                        className="PlaceHolder"
+                        placeholder="משפחה"
+                      />
                     </Form.Group>
                   </Form.Row>
 
                   <Form.Row className="Names">
                     <Form.Group controlId="formGridIdNumber">
                       <Form.Label>תעודת זהות</Form.Label>
-                      <Form.Control className="PlaceHolder" placeholder="כולל ספרת ביקורת" />
+                      <Form.Control
+                        value3={workerFirstName}
+                        onChange={this.handleChange}
+                        className="PlaceHolder"
+                        placeholder="כולל ספרת ביקורת"
+                      />
                     </Form.Group>
 
                     <Form.Group controlId="formGridBirthDate">
                       <Form.Label>תאריך לידה</Form.Label>
-                      <Form.Control className="PlaceHolder" placeholder="שנה/חודש/יום" />
+                      <Form.Control
+                        value4={workerFirstName}
+                        onChange={this.handleChange}
+                        className="PlaceHolder"
+                        placeholder="שנה/חודש/יום"
+                      />
                     </Form.Group>
                   </Form.Row>
 
                   <Form.Group controlId="formGridAddress">
                     <Form.Label>כתובת</Form.Label>
-                    <Form.Control className="PlaceHolder" placeholder="רחוב, דירה, עיר" />
+                    <Form.Control
+                      value5={workerFirstName}
+                      onChange={this.handleChange}
+                      className="PlaceHolder"
+                      placeholder="רחוב, דירה, עיר"
+                    />
                   </Form.Group>
 
                   <Button variant="primary" type="submit">
