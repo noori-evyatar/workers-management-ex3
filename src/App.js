@@ -2,12 +2,14 @@ import React from 'react';
 import './App.css';
 
 import NewWorkerForm from './components/NewWorkerForm';
+import WorkersList from './components/WorkersList';
 
 class App extends React.Component {
   constructor() {
     super();
-    this.state=({
+    this.state = ({
       workers: [],
+      id: 0,
       workerFirstName: '',
       workerLastName: '',
       workerAddress: '',
@@ -22,6 +24,7 @@ class App extends React.Component {
       <div className="App">
         ניהול רישום עובדים
         <NewWorkerForm />
+        <WorkersList />
       </div>
     )
   };

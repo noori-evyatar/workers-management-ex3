@@ -9,6 +9,9 @@ import Form from 'react-bootstrap/Form';
 class NewWorkerForm extends React.Component {
 
   render() {
+
+    
+
     return (
       <div className="NewWorkerForm">
         <Accordion defaultActiveKey="0">
@@ -45,7 +48,7 @@ class NewWorkerForm extends React.Component {
                     </Form.Group>
                   </Form.Row>
 
-                  <Form.Group  controlId="formGridAddress">
+                  <Form.Group controlId="formGridAddress">
                     <Form.Label>כתובת</Form.Label>
                     <Form.Control className="PlaceHolder" placeholder="רחוב, דירה, עיר" />
                   </Form.Group>
