@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import uuid from 'uuid';
 
 import NewWorkerForm from './components/NewWorkerForm';
 import WorkersList from './components/WorkersList';
@@ -9,7 +10,7 @@ class App extends React.Component {
     super(props);
     this.state = ({
       workers: [],
-      id: 0,
+      id: uuid(),
       workerFirstName: "",
       workerLastName: "",
       workerAddress: "",
@@ -20,7 +21,7 @@ class App extends React.Component {
 
   handleChange = (event) => {
     this.setState({
-      workerFirstName: event.target.value1,
+      workerFirstName: event.target.value,
       workerLastName: event.target.value2,
       workerAddress: event.target.value3,
       workerIdNumber: event.target.value4,
@@ -34,6 +35,7 @@ class App extends React.Component {
 
     const newWorker = {
       id: this.state.id,
+      title: this.state.workerLastName,
       workerFirstName: this.state.workerFirstName,
       workerLastName: this.state.workerLastName,
       workerAddress: this.state.workerAddress,
@@ -45,12 +47,12 @@ class App extends React.Component {
 
     this.setState({
       workers: updatedWorkers,
-      id: 0,
-      workerFirstName: '',
-      workerLastName: '',
-      workerAddress: '',
-      workerIdNumber: '',
-      workerBirthDate: ''
+      id: uuid(),
+      workerFirstName: "",
+      workerLastName: "",
+      workerAddress: "",
+      workerIdNumber: "",
+      workerBirthDate: ""
     });
     console.log(this.state.workers);
   };
@@ -68,7 +70,7 @@ class App extends React.Component {
           handleChange={this.handleChange}
           handleSubmit={this.handleSubmit}
         />
-        <WorkersList />
+        <WorkersList workers={this.state.workers}/>
       </div>
     )
   };

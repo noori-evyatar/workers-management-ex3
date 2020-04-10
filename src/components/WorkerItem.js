@@ -1,10 +1,14 @@
 import React from 'react';
 
-export default class WorkerItem extends Component {
+ class WorkerItem extends React.Component {
     render() {
+        const {title} =this.props;
         return(
             <div>
+                {title}
             </div>
         );
     }
-}
+};
+
+export default WorkerItem;
