@@ -15,11 +15,15 @@ class WorkersList extends React.Component {
                     return (<div key={key}>
                         <Alert variant="primary">
                           
-                        {worker.workerFirstName} :שם פרטי
-                        {worker.workerlastName} :שם משפחה
-                        {worker.workerIdNumber} :מספר ת״ז
-                        {worker.workerBirthDate} :תאריך לידה
-                        {worker.workerAddress} :כתובת
+                        שם פרטי: {worker.workerFirstName}
+                        <br></br>
+                      שם משפחה: {worker.workerLastName} 
+                      <br></br>
+                      מספר ת״ז: {worker.workerIdNumber} 
+                      <br></br>
+                      תאריך לידה: {worker.workerBirthDate} 
+                      <br></br>
+                     כתובת: {worker.workerAddress} 
     
                         </Alert>
 

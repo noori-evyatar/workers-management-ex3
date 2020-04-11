@@ -30,6 +30,7 @@ class NewWorkerForm extends React.Component {
                       <Form.Label>שם פרטי</Form.Label>
                       <Form.Control
                         value={workerFirstName}
+                        name="workerFirstName"
                         onChange={handleChange}
                         className="PlaceHolder"
                         placeholder="שם עובד"
@@ -39,7 +40,8 @@ class NewWorkerForm extends React.Component {
                     <Form.Group controlId="formGridLastName">
                       <Form.Label>שם משפחה</Form.Label>
                       <Form.Control
-                        value2={workerLastName}
+                        value={workerLastName}
+                        name="workerLastName"
                         onChange={handleChange}
                         className="PlaceHolder"
                         placeholder="משפחה"
@@ -51,7 +53,8 @@ class NewWorkerForm extends React.Component {
                     <Form.Group controlId="formGridIdNumber">
                       <Form.Label>תעודת זהות</Form.Label>
                       <Form.Control
-                        value3={workerIdNumber}
+                        value={workerIdNumber}
+                        name="workerIdNumber"
                         onChange={handleChange}
                         className="PlaceHolder"
                         placeholder="כולל ספרת ביקורת"
@@ -61,7 +64,8 @@ class NewWorkerForm extends React.Component {
                     <Form.Group controlId="formGridBirthDate">
                       <Form.Label>תאריך לידה</Form.Label>
                       <Form.Control
-                        value4={workerBirthDate}
+                        value={workerBirthDate}
+                        name="workerBirthDate"
                         onChange={handleChange}
                         className="PlaceHolder"
                         placeholder="שנה/חודש/יום"
@@ -72,7 +76,8 @@ class NewWorkerForm extends React.Component {
                   <Form.Group controlId="formGridAddress">
                     <Form.Label>כתובת</Form.Label>
                     <Form.Control
-                      value5={workerAddress}
+                      value={workerAddress}
+                      name="workerAddress"
                       onChange={handleChange}
                       className="PlaceHolder"
                       placeholder="רחוב, דירה, עיר"

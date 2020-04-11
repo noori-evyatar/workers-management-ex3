@@ -21,14 +21,12 @@ class App extends React.Component {
 
   handleChange = (event) => {
     this.setState({
-      workerFirstName: event.target.value,
-      workerLastName: event.target.value2,
-      workerAddress: event.target.value3,
-      workerIdNumber: event.target.value4,
-      workerBirthDate: event.target.value5
-
+      
+      [event.target.name]: event.target.value
     });
   };
+
+  
 
   handleSubmit = (event) => {
     event.preventDefault();
