@@ -63,6 +63,21 @@ class App extends React.Component {
       });
   };
 
+  handleEdit = (id) => {
+    const filteredWorkers = this.state.workers.filter(worker => worker.id !== id);
+    const selectedWorker = this.state.workers.find(worker => worker.id === id);
+    console.log(selectedWorker);
+
+    this.setState({
+      workers: filteredWorkers,
+      workerFirstName: selectedWorker.workerFirstName,
+      workerFirstName: selectedWorker.workerFirstName,
+      workerAddress: selectedWorker.workerAddress,
+      workerIdNumber: selectedWorker.workerIdNumbe,
+      workerBirthDate: selectedWorker.workerBirthDate
+    });
+  };
+
   render() {
     return (
       <div className="App">
@@ -79,6 +94,7 @@ class App extends React.Component {
         <WorkersList
           workers={this.state.workers}
           handleDelete={this.handleDelete}
+          handleEdit={this.handleEdit}
         />
       </div>
     )

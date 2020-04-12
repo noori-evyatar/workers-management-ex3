@@ -3,14 +3,10 @@ import './WorkersList.css';
 import WorkerItem from './WorkerItem';
 import Alert from 'react-bootstrap/Alert';
 
-
-
 class WorkersList extends React.Component {
 
-
-
     render() {
-        const { workers, handleDelete } = this.props;
+        const { workers, handleDelete, handleEdit } = this.props;
 
         return (
             <div className="WorkersList">
@@ -31,6 +27,7 @@ class WorkersList extends React.Component {
                             <WorkerItem
                                 key={worker.id}
                                 handleDelete={() => handleDelete(worker.id)}
+                                handleEdit={() => handleEdit(worker.id)}
                            />
                         </Alert>
 
