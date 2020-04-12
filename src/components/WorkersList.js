@@ -3,28 +3,35 @@ import './WorkersList.css';
 import WorkerItem from './WorkerItem';
 import Alert from 'react-bootstrap/Alert';
 
+
+
 class WorkersList extends React.Component {
 
 
+
     render() {
-        const { workers } = this.props;
+        const { workers, handleDelete } = this.props;
 
         return (
-            <div>
+            <div className="WorkersList">
                 {workers.map((worker, key) => {
                     return (<div key={key}>
                         <Alert variant="primary">
-                          
-                        שם פרטי: {worker.workerFirstName}
-                        <br></br>
-                      שם משפחה: {worker.workerLastName} 
-                      <br></br>
-                      מספר ת״ז: {worker.workerIdNumber} 
-                      <br></br>
-                      תאריך לידה: {worker.workerBirthDate} 
-                      <br></br>
-                     כתובת: {worker.workerAddress} 
-    
+
+                            שם פרטי: {worker.workerFirstName}
+                            <br></br>
+                            שם משפחה: {worker.workerLastName}
+                            <br></br>
+                            מספר ת״ז: {worker.workerIdNumber}
+                            <br></br>
+                            תאריך לידה: {worker.workerBirthDate}
+                            <br></br>
+                            כתובת: {worker.workerAddress}
+                            <br></br>
+                            <WorkerItem
+                                key={worker.id}
+                                handleDelete={() => handleDelete(worker.id)}
+                           />
                         </Alert>
 
                     </div>);

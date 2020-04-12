@@ -1,11 +1,12 @@
 import React from 'react';
+import Button from 'react-bootstrap/Button';
 
  class WorkerItem extends React.Component {
     render() {
-        const {title} =this.props;
+        const {handleDelete} =this.props;
         return(
             <div>
-                {title}
+            <Button variant="danger" onClick={handleDelete}>הסרה</Button>
             </div>
         );
     }

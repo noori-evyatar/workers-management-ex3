@@ -14,7 +14,7 @@ class NewWorkerForm extends React.Component {
 
     return (
       <div className="NewWorkerForm">
-        <Accordion defaultActiveKey="0">
+        <Accordion defaultActiveKey="3">
           <Card>
             <Card.Header>
               <Accordion.Toggle as={Button} variant="link" eventKey="1">

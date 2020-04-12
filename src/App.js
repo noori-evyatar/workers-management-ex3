@@ -15,18 +15,18 @@ class App extends React.Component {
       workerLastName: "",
       workerAddress: "",
       workerIdNumber: "",
-      workerBirthDate: ""
+      workerBirthDate: "",
     })
   };
 
   handleChange = (event) => {
     this.setState({
-      
+
       [event.target.name]: event.target.value
     });
   };
 
-  
+
 
   handleSubmit = (event) => {
     event.preventDefault();
@@ -55,6 +55,14 @@ class App extends React.Component {
     console.log(this.state.workers);
   };
 
+  handleDelete = (id) => {
+    const filteredWorkers = this.state.workers.filter(worker => 
+      worker.id !== id);
+      this.setState({
+        workers: filteredWorkers
+      });
+  };
+
   render() {
     return (
       <div className="App">
@@ -68,7 +76,10 @@ class App extends React.Component {
           handleChange={this.handleChange}
           handleSubmit={this.handleSubmit}
         />
-        <WorkersList workers={this.state.workers}/>
+        <WorkersList
+          workers={this.state.workers}
+          handleDelete={this.handleDelete}
+        />
       </div>
     )
   };
