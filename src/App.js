@@ -16,6 +16,7 @@ class App extends React.Component {
       workerAddress: "",
       workerIdNumber: "",
       workerBirthDate: "",
+      editWorker: false
     })
   };
 
@@ -38,7 +39,8 @@ class App extends React.Component {
       workerLastName: this.state.workerLastName,
       workerAddress: this.state.workerAddress,
       workerIdNumber: this.state.workerIdNumber,
-      workerBirthDate: this.state.workerBirthDate
+      workerBirthDate: this.state.workerBirthDate,
+      editWorker: false
     }
 
     const updatedWorkers = [...this.state.workers, newWorker];
@@ -50,7 +52,8 @@ class App extends React.Component {
       workerLastName: "",
       workerAddress: "",
       workerIdNumber: "",
-      workerBirthDate: ""
+      workerBirthDate: "",
+      editWorker: false
     });
     console.log(this.state.workers);
   };
@@ -74,7 +77,10 @@ class App extends React.Component {
       workerFirstName: selectedWorker.workerFirstName,
       workerAddress: selectedWorker.workerAddress,
       workerIdNumber: selectedWorker.workerIdNumbe,
-      workerBirthDate: selectedWorker.workerBirthDate
+      workerBirthDate: selectedWorker.workerBirthDate,
+      editWorker: true,
+      id: id
+      
     });
   };
 
@@ -90,6 +96,7 @@ class App extends React.Component {
           workerBirthDate={this.state.workerBirthDate}
           handleChange={this.handleChange}
           handleSubmit={this.handleSubmit}
+          editWorker={this.state.editWorker}
         />
         <WorkersList
           workers={this.state.workers}

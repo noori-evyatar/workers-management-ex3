@@ -10,7 +10,7 @@ class NewWorkerForm extends React.Component {
 
   render() {
 
-    const { workerFirstName, workerLastName, workerAddress, workerIdNumber, workerBirthDate, handleSubmit, handleChange } = this.props;
+    const { workerFirstName, workerLastName, workerAddress, workerIdNumber, workerBirthDate, handleSubmit, handleChange, editWorker } = this.props;
 
     return (
       <div className="NewWorkerForm">
@@ -18,7 +18,7 @@ class NewWorkerForm extends React.Component {
           <Card>
             <Card.Header>
               <Accordion.Toggle as={Button} variant="link" eventKey="1">
-                הוספת עובד חדש
+              {editWorker ? "עריכת פרטי עובד" : "הוספת עובד חדש"}
               </Accordion.Toggle>
             </Card.Header>
             <Accordion.Collapse eventKey="1">
@@ -85,7 +85,7 @@ class NewWorkerForm extends React.Component {
                   </Form.Group>
 
                   <Button variant="primary" type="submit">
-                    הוספת עובד
+                    {editWorker ? "שמירת שינויים" : "הוספת עובד"}
                   </Button>
                 </Form>
               </Card.Body>
